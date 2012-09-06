@@ -41,7 +41,9 @@
 		'links'=>$this->breadcrumbs,
 	)); ?><!-- breadcrumbs -->
 
-	<?php echo $content; ?>
+	<?php echo $content; 
+          $this->widget('ext.ChatBox.ChatBox',array('options'=>array('float'=>'right','height'=>'400px'))); 
+        ?>
 
 	<div id="footer">
 		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
