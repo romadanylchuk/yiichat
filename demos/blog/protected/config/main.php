@@ -35,7 +35,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=idntesttask',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '',
+			'password' => '1405',
 			'charset' => 'utf8',
 			'tablePrefix' => 'tbl_',
 		),
