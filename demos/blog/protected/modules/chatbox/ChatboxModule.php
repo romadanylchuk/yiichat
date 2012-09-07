@@ -15,7 +15,7 @@
  *
  */
 
-class ChatBoxModule extends CWebModule
+class ChatboxModule extends CWebModule
 {
     public function init()
     {
@@ -24,8 +24,8 @@ class ChatBoxModule extends CWebModule
 
         // import the module-level models and components
         $this->setImport(array(
-            'ChatBox.models.*',
-            'ChatBox.components.*',
+            'chatbox.models.*',
+            'chatbox.components.*',
         ));
     }
 

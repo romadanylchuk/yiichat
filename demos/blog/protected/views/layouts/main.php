@@ -42,7 +42,7 @@
 	)); ?><!-- breadcrumbs -->
 
 	<?php echo $content; 
-          $this->widget('ext.ChatBox.ChatBox',array('options'=>array('float'=>'right','height'=>'400px'))); 
+          $this->widget('chatbox.components.ChatBox',array('options'=>array('float'=>'right','height'=>'400px'))); 
         ?>
 
 	<div id="footer">

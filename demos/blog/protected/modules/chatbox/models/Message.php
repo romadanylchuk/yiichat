@@ -14,15 +14,13 @@
  *
  *
  */
-class Message {
+class Message  extends CActiveRecord{
 	/**
-	 * The followings are the available columns in table 'tbl_user':
+	 * The followings are the available columns in table 'tbl_message':
 	 * @var integer $id
 	 * @var string $username
-	 * @var string $password
-	 * @var string $salt
-	 * @var string $email
-	 * @var string $profile
+	 * @var string $message
+	 * @var string $time
 	 */
 
 	/**
@@ -53,7 +51,10 @@ class Message {
 			array('message, username', 'required'),
 			array('message', 'length', 'max'=>100),
 			array('username', 'length', 'max'=>128),
-		);
+		        // The following rule is used by search().
+			// Please remove those attributes that should not be searched.
+			array('id, message, username, time', 'safe', 'on'=>'search'),
+                    );
 	}
 
 	/**
@@ -63,6 +64,8 @@ class Message {
 	{
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
+		return array(
+		);
 	}
 
 	/**
@@ -82,7 +85,15 @@ class Message {
 	 */
 	public function getLast15()
         {
-            $this->model()->findAll('',)
+            $count=Message::model()->count();
+            if ($count<15)$count=0;
+            else $count-=15;
+            $criteria=new CDbCriteria;
+	    $criteria->order = '`time` asc';
+            $criteria->limit = ($count?$count.',':'').'15';
+            return new CActiveDataProvider('Message', array(
+               'criteria' => $criteria
+             ));
         }
 
        

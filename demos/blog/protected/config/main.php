@@ -22,6 +22,7 @@ return array(
 
 	// application components
 	'components'=>array(
+                
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
@@ -71,4 +72,7 @@ return array(
 	// application-level parameters that can be accessed
 	// using Yii::app()->params['paramName']
 	'params'=>require(dirname(__FILE__).'/params.php'),
+        'modules'=>array('chatbox'),
+        
+        
 );

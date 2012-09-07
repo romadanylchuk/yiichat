@@ -12,12 +12,12 @@
 <!-- begin ChatBox !-->
 <script type="text/javascript">
 jQuery(document).ready(function($) {
-   ChatBox.init('<?=$options['id']?>');    
+    ChatBox.init('<?=$options['id']?>','<?=Yii::app()->createUrl('/chatbox/')?>');    
 });
 </script>
 
 <div class ="chatbox  <?=$options['float']?>" id="<?=$options['id']?>" style="height: <?=$options['height']?>;                                    
-                                     top: <?=$options['top']?>;">
+                                     top: <?=$options['top']?>;<?=$options['float']?>:0px;">
     <div class="chatboxcontent <?=$options['float']?>" style="display:none; width: <?=$options['width']?>;">
         <div class="chatboxtitle">
            <?=$options['title']?><span class="chatboxuser"><?= $user?></span>
