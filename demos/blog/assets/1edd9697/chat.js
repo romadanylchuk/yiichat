@@ -82,7 +82,6 @@ var ChatBox={
             '',
             function(data) {
                 $('#'+ChatBox.chatid+' .chatboxmess').html(data);
-                $('#'+ChatBox.chatid+' .chatboxmessage').val('');
             });
         }    
     },
