@@ -90,10 +90,9 @@ class Message  extends CActiveRecord{
             else $count-=15;
             $criteria=new CDbCriteria;
 	    $criteria->order = '`time` asc';
-            $criteria->limit = ($count?$count.',':'').'15';
-            return new CActiveDataProvider('Message', array(
-               'criteria' => $criteria
-             ));
+            $criteria->offset =$count;
+            $criteria->limit = '15';
+            return Message::model()->findAll( $criteria);// new CActiveDataProvider('Message', array(         'criteria' => $criteria             ));
         }
 
        

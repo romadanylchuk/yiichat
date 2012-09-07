@@ -70,7 +70,7 @@ class ChatBox extends CWidget{
              if (!isset($_POST['getmess'])){
             //get defoul user and online users list for chat
              
-            $user = Yii::app()->user->isGuest?Yii::app()->user->name:'Guest';
+            $user = !Yii::app()->user->isGuest?Yii::app()->user->name:'Guest';
             /*
 	     * Get options
 	     */

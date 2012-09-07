@@ -21,9 +21,8 @@ class DefaultController extends Controller
         // $this->render('index');
         
         $model  = new Message;
-        $user = Yii::app()->user->isGuest?Yii::app()->user->name:'Guest';  
+        $user = !Yii::app()->user->isGuest?Yii::app()->user->name:'Guest';
         if (isset($_POST['message'])){
-          echo $_POST['message'];  
            $model->message=$_POST['message'];
            $model->username=$user;
            $model->save();

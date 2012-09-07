@@ -29,7 +29,7 @@ jQuery(document).ready(function($) {
                 <div class="chatboxinput">
                     
                    <?php echo Chtml::hiddenField('username',$user); ?>
-                   <?php echo Chtml::TextField('chatboxmessage','',array('class'=>"chatboxmessage")); ?>
+                   <?php echo Chtml::TextField('chatboxmessage','',array('class'=>"chatboxmessage",' size'=>'20','maxlength'=>'100')); ?>
                    <a href="#" class="chatboxsend">Send</a> 
                    
                 </div>

@@ -11,17 +11,20 @@
  *
  * 
  */  
+foreach ($message_list as $data){
+?>    
+<div class="chatboxitem">
+    <table class="chatboxitemtable">
+        <tr>
+            <td class="chatboxitemtime"><?=$data->time?></td>
+            <td class="chatboxitemname"><?=$data->username?></td>
+        </tr>
+    </table>
+    <div class="chatboxitemtext">
+            <td><?=$data->message?></td>
+    </div>    
+</div> 
+<?php
+}
 
-$this->widget('zii.widgets.CListView', array(
-    'dataProvider' => $message_list,
-    'itemView' => '_item',
-    'separator'=>'',
-    'summaryText'=>'',
-    'enablePagination'=>false,
-));
-/*$this->widget('zii.widgets.CListView', array(
-    'dataProvider' => $message_list,
-    'itemView' => '_item',
-));
-*/
 ?>
